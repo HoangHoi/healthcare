@@ -1,9 +1,22 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Font Awesome
+@import "~font-awesome/scss/font-awesome";
+
+@import "menu";
+@import "top-header";
+@import "navbar";
+@import "content";
+@import "footer";
+
+body {
+    background-color: #E7E7E7;
+}
+
+.no-border-radius {
+    border-radius: 0;
+}

@@ -1,0 +1,74 @@
+.left-menu {
+    margin: 5px 0px 15px 0px;
+    .menu-title {
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: 900;
+        padding: 0;
+        border-bottom: solid 2px #c3c3c3;
+    }
+    .menu-body {
+        padding: 0;
+        margin: 10px 0 0 0;
+        li {
+            cursor: pointer;
+            list-style: none;
+            padding: 10px;
+            background-color: #c1b2fb;
+            &.active {
+                background-color: $menu-active;
+                a {
+                    font-size: 15px;
+                    font-weight: 900;
+                    text-decoration: none;
+                    cursor: default;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+            &:hover:not(.active) {
+                background-color: #34a5e4;
+            }
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+            &:not(:last-child) {
+                border-bottom: solid 1px #fff;
+            }
+        }
+    }
+}
+
+.right-menu {
+    .menu-title {
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: 900;
+        padding: 10px 10px 5px 10px;
+        border-bottom: solid 1px #c5c5c5;
+    }
+    .menu-body {
+        padding: 0 0 0 15px;
+        margin: 0;
+        li {
+            color: #34a5e4;
+            cursor: pointer;
+            &.active {
+                a {
+                    font-weight: 900;
+                }
+            }
+            a {
+                font-size: 16px;
+                text-decoration: none;
+            }
+            list-style: square;
+            margin: 10px 0;
+            &:hover {
+                color: $menu-active;
+            }
+        }
+    }
+}
