@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-3 hidden-sm hidden-xs">
             <div class="panel panel-default">
@@ -70,7 +70,7 @@
                                 <div class="description">
                                     <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
                                     <br/>
-                                    <span>Ha Noi</span>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                 <div class="description">
                                     <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
                                     <br/>
-                                    <span>Ha Noi</span>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                 <div class="description">
                                     <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
                                     <br/>
-                                    <span>Ha Noi</span>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
                                 </div>
                             </div>
                         </div>
