@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row top-header">
                 <div class="col-md-3 col-sm-2 col-xs-12 top-content">
                     <div class="logo-image"></div>
@@ -63,11 +63,11 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse" style="padding: 0">
                     <ul class="nav navbar-nav" style="margin: 0">
-                        <li class="navbar-item active"><a href="{{ route('login') }}">Trang chu</a></li>
-                        <li class="navbar-item"><a href="{{ route('login') }}">Chuyen khoa</a></li>
-                        <li class="navbar-item"><a href="{{ route('login') }}">Benh vien</a></li>
-                        <li class="navbar-item"><a href="{{ route('login') }}">Cam nang</a></li>
-                        <li class="navbar-item"><a href="{{ route('login') }}">Lien he</a></li>
+                        <li class="navbar-item active"><a href="#">Trang chu</a></li>
+                        <li class="navbar-item"><a href="#">Dat lich kham</a></li>
+                        <li class="navbar-item"><a href="#">Benh vien</a></li>
+                        <li class="navbar-item"><a href="#">Cam nang</a></li>
+                        <li class="navbar-item"><a href="#">Lien he</a></li>
                     </ul>
                 </div>
             </nav>
