@@ -1,0 +1,42 @@
+.social-bar {
+    display: flex;
+    position: relative;
+    @media (min-width: $grid-float-breakpoint) {
+        position: fixed;
+        left: 0px;
+        top: 35vh;
+        flex-direction: column;
+    }
+    .social-item {
+        margin: 5px 3px;
+        width: 40px;
+        height: 40px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        cursor: pointer;
+        &.facebook {
+            background-color: rgba(66, 69, 148, 1);
+            &:hover {
+                background-color: rgba(66, 69, 148, 0.8);
+            }
+        }
+        &.google-plus {
+            background-color: rgba(0, 171, 249, 1);
+            &:hover {
+                background-color: rgba(0, 171, 249, 0.8);
+            }
+        }
+        &.twitter {
+            background-color: #EF352E;
+        }
+        &.youtube {
+            background-color: rgba(247, 0, 0, 1);
+            &:hover {
+                background-color: rgba(247, 0, 0, 0.8);
+            }
+        }
+    }
+}

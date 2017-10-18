@@ -33,33 +33,16 @@
                 }
             }
         }
+        .contact {
+            font-size: 20px;
+            font-weight: 900;
+            color: black;
+            .name, .phone-number {
+                strong {
+                    color: red;
+                    font-style: italic;
+                }
 
-        .social-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            .social-item {
-                margin: 0 5px;
-                width: 40px;
-                height: 40px;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 22px;
-                &.facebook {
-                    background-color: #424594;
-                }
-                &.google-plus {
-                    background-color: #00ABF9;
-                }
-                &.twitter {
-                    background-color: #EF352E;
-                }
-                &.youtube {
-                    background-color: #F70000;
-                }
             }
         }
     }

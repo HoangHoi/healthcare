@@ -15,7 +15,7 @@
         }
         align-items: center;
         text-align: center;
-        color: #c5c5c5;
+        color: #8f9294;
     }
     .footer-menu {
         display: flex;
@@ -29,15 +29,32 @@
         li {
             padding: 0 5px;
             &:not(:last-child) {
-                border-right: solid 1px #c5c5c5;
+                border-right: solid 1px #8f9294;
             }
             a {
-                color: #c5c5c5;
-                &:hover {
-                    color: blue;
-                }
+                color: #8f9294;
             }
             list-style: none;
         }
+    }
+    .address {
+        display: flex;
+        justify-content: center;
+        @media (min-width: $grid-float-breakpoint) {
+            justify-content: flex-start;
+        }
+        align-items: center;
+        text-align: center;
+        color: #8f9294;
+    }
+    .phone-number {
+        display: flex;
+        justify-content: center;
+        @media (min-width: $grid-float-breakpoint) {
+            justify-content: flex-start;
+        }
+        align-items: center;
+        text-align: center;
+        color: #8f9294;
     }
 }
