@@ -6,12 +6,12 @@
         min-height: 50px;
         display: flex;
         border-radius: 0;
-        background-color: #2B61C0;
+        background-color: $menu-default;
         @media (min-width: $grid-float-breakpoint) {
             display: none;
         }
-        &:hover, &:focus {
-            background-color: #2B61C0;
+        &:hover, &:focus, &:active {
+            background-color: $menu-active;
         }
         .menu-bar {
             display: flex;
@@ -38,10 +38,10 @@
         .active {
             a {
                 color: #fff;
-                background-color: #2859B1;
+                background-color: $menu-active;
                 &:hover {
                     color: #fff;
-                    background-color: #2859B1;
+                    background-color: $menu-active;
                 }
             }
         }
@@ -55,9 +55,9 @@
         width: 100%;
     }
     .navbar-item {
-        background-color: rgba(30, 115, 190, 1);
+        background-color: $menu-default;
         &:hover {
-            background-color: #2859B1;
+            background-color: $menu-active;
         }
         @media (min-width: $grid-float-breakpoint) {
             width: 100%;
