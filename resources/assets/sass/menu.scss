@@ -5,7 +5,7 @@
         font-size: 17px;
         font-weight: 900;
         padding: 0;
-        border-bottom: solid 2px #c3c3c3;
+        border-bottom: solid 2px $menu-title;
     }
     .menu-body {
         padding: 0;
@@ -14,7 +14,7 @@
             cursor: pointer;
             list-style: none;
             padding: 10px;
-            background-color: #c1b2fb;
+            background-color: $menu-default;
             &.active {
                 background-color: $menu-active;
                 a {
@@ -29,7 +29,7 @@
                 color: #fff;
             }
             &:hover:not(.active) {
-                background-color: #34a5e4;
+                background-color: $menu-active;
             }
             &:hover, &:focus {
                 text-decoration: none;
@@ -47,13 +47,13 @@
         font-size: 17px;
         font-weight: 900;
         padding: 10px 10px 5px 10px;
-        border-bottom: solid 1px #c5c5c5;
+        border-bottom: solid 1px $menu-title;
     }
     .menu-body {
         padding: 0 0 0 15px;
         margin: 0;
         li {
-            color: #34a5e4;
+            color: $menu-default;
             cursor: pointer;
             &.active {
                 a {
@@ -61,6 +61,7 @@
                 }
             }
             a {
+                color: $menu-default;
                 font-size: 16px;
                 text-decoration: none;
             }
@@ -68,6 +69,10 @@
             margin: 10px 0;
             &:hover {
                 color: $menu-active;
+                text-decoration: underline;
+                a {
+                    color: $menu-active;
+                }
             }
         }
     }

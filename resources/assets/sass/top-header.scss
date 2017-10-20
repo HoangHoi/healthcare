@@ -34,15 +34,24 @@
             }
         }
         .contact {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 900;
             color: black;
-            .name, .phone-number {
+            .phone-number {
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 strong {
                     color: red;
                     font-style: italic;
                 }
-
+                .fa {
+                    color: rgba(59, 89, 152, 1);
+                    font-size: 40px;
+                    margin-right: 8px;
+                }
             }
         }
     }
