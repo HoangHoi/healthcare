@@ -14,9 +14,14 @@
 @import "content";
 @import "footer";
 @import "social";
+@import "booking";
 
 body {
     background-color: #E8EAEE;
+}
+
+.full {
+    margin: -15px;
 }
 
 .no-border-radius {
