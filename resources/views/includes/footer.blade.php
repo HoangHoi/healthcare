@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="address">
-            Địa chỉ: XÓm 1, Cổ Điển, Hải Bối, Đông Anh, Hà Nội
+            Địa chỉ: Xóm 1, Cổ Điển, Hải Bối, Đông Anh, Hà Nội
         </div>
         <div class="phone-number">
             <span>Điện thoại: 024 66 525 595</span>
