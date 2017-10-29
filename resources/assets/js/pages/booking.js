@@ -9,3 +9,6 @@ $('#select-service').on('change', (event) => {
         $('#service-detail').css('display', 'none');
     }
 });
+$('.datepicker').datepicker({
+    dateFormat: 'dd-mm-yy'
+});
