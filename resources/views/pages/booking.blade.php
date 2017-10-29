@@ -16,13 +16,13 @@
                         <span>Hen bac sy</span>
                     </option>
                     <option value="chuyen-khoa">
-                        <span>Dat chuyen khoa</span>
+                        <span>Chon chuyen khoa kham</span>
                     </option>
                     <option value="benh-vien">
-                        <span>Hen benh vien</span>
+                        <span>Hen kham o benh vien</span>
                     </option>
                     <option value="tu-van">
-                        <span>Tu van toi</span>
+                        <span>Tu van toi chon bac sy</span>
                     </option>
                 </select>
             </div>
@@ -64,7 +64,7 @@
             <div class="time-select">
                 <div class="date-select">
                     <label for="date">Ngay kham</label>
-                    <input type="text" class="form-control" id="date" placeholder="29-10-2017">
+                    <input type="text" class="form-control datepicker" id="date" placeholder="29-10-2017">
                 </div>
                 <div class="time-select">
                     <label for="date">Gio kham</label>
@@ -154,5 +154,10 @@
 @endsection
 
 @push('scripts')
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="{!! mix('js/booking.js') !!}"></script>
+@endpush
+
+@push('styles')
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endpush

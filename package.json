@@ -21,6 +21,8 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.5.1",
+    "jquery-datetimepicker": "^2.5.11",
+    "jquery-ui": "^1.12.1",
     "moment": "^2.17.1",
     "node-pace-progress": "^1.0.3"
   }
