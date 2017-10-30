@@ -29,21 +29,69 @@
             <div class="search-group active" id="chon-bac-sy">
                 <label class="search-title" for="search-input">Chon bac sy</label>
                 <div class="search-input">
-                    <input type="email" class="form-control" id="search-input" placeholder="Nhap ten bac sy de tim kiem">
+                    <input type="text" class="form-control" id="tim-bac-sy" placeholder="Nhap ten bac sy de tim kiem">
+                    <div class="search-result">
+                        <ul id="bac-sy-goi-y" class="result-list">
+                           <li>
+                               <div class="item-title">Bac sy Hoang Huu Hoi</div>
+                               <div class="item-body">
+                                   <span>Bac sy chuyen khoa - benh vien bach mai</span>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="item-title">Bac sy Hoang Huu Hoi</div>
+                               <div class="item-body">
+                                   <span>Bac sy chuyen khoa - benh vien bach mai</span>
+                               </div>
+                           </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="search-group" id="chon-chuyen-khoa">
                 <label class="search-title" for="search-input">Chon chuyen khoa</label>
                 <div class="search-input">
-                    <input type="email" class="form-control" id="search-input" placeholder="Nhap ten chuyen khoa de tim kiem">
+                    <input type="text" class="form-control" id="tim-chuyen-khoa" placeholder="Nhap ten chuyen khoa de tim kiem">
+                    <div class="search-result">
+                        <ul id="chuyen-khoa-goi-y" class="result-list">
+                           <li>
+                               <div class="item-title">Chuyen khoa Noi</div>
+                               <div class="item-body">
+                                   <span>Chuyen kham cac benh duong ruot, tim, gan</span>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="item-title">Chuyen khoa ngoai</div>
+                               <div class="item-body">
+                                   <span>Chuyen tri cac benh ngoai da</span>
+                               </div>
+                           </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="search-group" id="chon-benh-vien">
                 <label class="search-title" for="search-input">Chon benh vien</label>
                 <div class="search-input">
-                    <input type="email" class="form-control" id="search-input" placeholder="Nhap ten benh vien de tim kiem">
+                    <input type="text" class="form-control" id="tim-benh-vien" placeholder="Nhap ten benh vien de tim kiem">
+                    <div class="search-result">
+                        <ul id="benh-vien-goi-y" class="result-list">
+                           <li>
+                               <div class="item-title">Benh Vien Bach Mai</div>
+                               <div class="item-body">
+                                   <span>Benh vien uy tin nhat Ha Noi</span>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="item-title">Benh Vien Hong Ngoc</div>
+                               <div class="item-body">
+                                   <span>Benh vien tu nhan uy tin nhat</span>
+                               </div>
+                           </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -155,6 +203,7 @@
 
 @push('scripts')
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>var appUrl = "{!! env('APP_URL') !!}"</script>
     <script src="{!! mix('js/booking.js') !!}"></script>
 @endpush
 
