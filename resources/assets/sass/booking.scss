@@ -59,7 +59,7 @@
                 .search-result {
                     min-height: 80px;
                     z-index: 1000;
-                    // display: none;
+                    display: none;
                     border-radius: 4px;
                     position: absolute;
                     border: solid 1px #ccd0d2;
@@ -96,6 +96,11 @@
                 }
                 input:focus~.search-result {
                     display: block;
+                }
+                &:hover {
+                    .search-result {
+                        display: block;
+                    }
                 }
             }
         }

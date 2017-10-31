@@ -20,3 +20,4 @@
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/trang-chu', 'HomeController@index')->name('home');
 Route::get('/dat-lich-kham', 'BookingController@index')->name('booking.index');
+Route::post('/dat-lich-kham', 'BookingController@store')->name('booking.store');
