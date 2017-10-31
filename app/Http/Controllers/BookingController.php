@@ -12,4 +12,12 @@ class BookingController extends Controller
             'topActive' => 1,
         ]);
     }
+
+    public function store(Request $request)
+    {
+        return view('pages.booking-success', [
+            'topActive' => 1,
+        ]);
+        // dd($request->all());
+    }
 }

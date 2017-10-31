@@ -23,8 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home', [
-            'topActive' => 0,
-        ]);
+        return redirect()->route('booking.index');
+        // return view('pages.home', [
+        //     'topActive' => 0,
+        // ]);
     }
 }
