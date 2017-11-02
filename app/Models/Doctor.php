@@ -28,4 +28,14 @@ class Doctor extends Model
         }
         return Storage::url('public/' . config('upload.path.default') . '/' . config('upload.default.user_image'));
     }
+
+    public function hospital()
+    {
+        $this->belongsTo(Hospital::class, 'hospital_id');
+    }
+
+    public function specialist()
+    {
+        $this->belongsTo(Specialist::class);
+    }
 }

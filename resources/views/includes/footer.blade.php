@@ -15,16 +15,16 @@
     <div class="col-md-4 col-sm-12 col-xs-12">
         <ul class="footer-menu">
             <li>
-                <a href="">Trang chu</a>
+                <a>Trang chủ</a>
             </li>
             <li>
-                <a href="">Thong tin</a>
+                <a>Đặt lịch khám</a>
             </li>
             <li>
-                <a href="">Cam nang</a>
+                <a>Cẩm nang</a>
             </li>
             <li>
-                <a href="">Lien he</a>
+                <a>Liên hệ</a>
             </li>
         </ul>
     </div>

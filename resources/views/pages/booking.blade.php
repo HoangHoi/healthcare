@@ -4,92 +4,59 @@
 <div class="panel panel-default">
     <div class="panel-body booking">
         <div class="booking-title">
-            <span>Dat lich kham bac sy chuyen khoa</span>
+            <span>Đặt lịch khám bác sỹ chuyên khoa</span>
         </div>
         <div class="booking-body">
             <div class="select-service">
                 <div class="title">
-                    <span>Chon dich vu</span>
+                    <span>Chọn dịch vụ</span>
                 </div>
                 <select id="select-service" class="select-box">
                     <option value="bac-sy">
-                        <span>Hen bac sy</span>
+                        <span>Hẹn bác sỹ</span>
                     </option>
                     <option value="chuyen-khoa">
-                        <span>Chon chuyen khoa kham</span>
+                        <span>Chọn chuyên khoa khám</span>
                     </option>
                     <option value="benh-vien">
-                        <span>Hen kham o benh vien</span>
+                        <span>Hẹn khám ở bệnh viện</span>
                     </option>
                     <option value="tu-van">
-                        <span>Tu van toi chon bac sy</span>
+                        <span>Tư vấn tôi chọn bác sỹ</span>
                     </option>
                 </select>
             </div>
             <div class="search-group active" id="chon-bac-sy">
-                <label class="search-title" for="search-input">Chon bac sy</label>
+                <label class="search-title" for="search-input">Chọn bác sỹ</label>
                 <div class="search-input">
-                    <input type="text" class="form-control" id="tim-bac-sy" placeholder="Nhap ten bac sy de tim kiem">
+                    <input type="text" class="form-control" id="tim-bac-sy" placeholder="Nhập tên bác sỹ để tìm kiếm">
                     <div class="search-result" id="bac-sy-search-result">
                         <ul id="bac-sy-goi-y" class="result-list">
-                           <li>
-                               <div class="item-title">Bac sy Hoang Huu Hoi</div>
-                               <div class="item-body">
-                                   <span>Bac sy chuyen khoa - benh vien bach mai</span>
-                               </div>
-                           </li>
-                           <li>
-                               <div class="item-title">Bac sy Hoang Huu Hoi</div>
-                               <div class="item-body">
-                                   <span>Bac sy chuyen khoa - benh vien bach mai</span>
-                               </div>
-                           </li>
+                            <div style="background-color: rgba(250, 251, 254, 1); display: flex; justify-content: center; align-items: center; padding: 10px; height: 100px">Click vào ô nhập liệu để tìm kiếm...</div>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="search-group" id="chon-chuyen-khoa">
-                <label class="search-title" for="search-input">Chon chuyen khoa</label>
+                <label class="search-title" for="search-input">Chọn chuyên khoa</label>
                 <div class="search-input">
-                    <input type="text" class="form-control" id="tim-chuyen-khoa" placeholder="Nhap ten chuyen khoa de tim kiem">
+                    <input type="text" class="form-control" id="tim-chuyen-khoa" placeholder="Nhập tên chuyên khoa để tìm kiếm">
                     <div class="search-result" id="bac-sy-search-result">
                         <ul id="chuyen-khoa-goi-y" class="result-list">
-                           <li>
-                               <div class="item-title">Chuyen khoa Noi</div>
-                               <div class="item-body">
-                                   <span>Chuyen kham cac benh duong ruot, tim, gan</span>
-                               </div>
-                           </li>
-                           <li>
-                               <div class="item-title">Chuyen khoa ngoai</div>
-                               <div class="item-body">
-                                   <span>Chuyen tri cac benh ngoai da</span>
-                               </div>
-                           </li>
+                           <div style="background-color: rgba(250, 251, 254, 1); display: flex; justify-content: center; align-items: center; padding: 10px; height: 100px">Click vào ô nhập liệu để tìm kiếm...</div>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="search-group" id="chon-benh-vien">
-                <label class="search-title" for="search-input">Chon benh vien</label>
+                <label class="search-title" for="search-input">Chọn bệnh viện</label>
                 <div class="search-input">
-                    <input type="text" class="form-control" id="tim-benh-vien" placeholder="Nhap ten benh vien de tim kiem">
+                    <input type="text" class="form-control" id="tim-benh-vien" placeholder="Nhập tên bệnh viện để tìm kiếm">
                     <div class="search-result" id="bac-sy-search-result">
                         <ul id="benh-vien-goi-y" class="result-list">
-                           <li>
-                               <div class="item-title">Benh Vien Bach Mai</div>
-                               <div class="item-body">
-                                   <span>Benh vien uy tin nhat Ha Noi</span>
-                               </div>
-                           </li>
-                           <li>
-                               <div class="item-title">Benh Vien Hong Ngoc</div>
-                               <div class="item-body">
-                                   <span>Benh vien tu nhan uy tin nhat</span>
-                               </div>
-                           </li>
+                           <div style="background-color: rgba(250, 251, 254, 1); display: flex; justify-content: center; align-items: center; padding: 10px; height: 100px">Click vào ô nhập liệu để tìm kiếm...</div>
                         </ul>
                     </div>
                 </div>
@@ -100,34 +67,24 @@
             </div>
 
             <div class="service-detail" id="service-detail">
-                <div class="service-picture">
-                    <div class="picture" style="background-image: url('images/doctors/bacsy.jpg');"></div>
-                </div>
-                <div class="description">
-                    <div class="title">
-                        <span>Bac sy Hoang Huu Hoi</span>
-                    </div>
-                    <div class="info">
-                        <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
-                    </div>
-                </div>
+
             </div>
 
             <div class="time-select">
                 <div class="date-select">
-                    <label for="date">Ngay kham</label>
+                    <label for="date">Ngày khám</label>
                     <input type="text" class="form-control datepicker" id="date-select" placeholder="29-10-2017">
                 </div>
                 <div class="time-select">
-                    <label for="date">Gio kham</label>
+                    <label for="date">Giờ khám</label>
                     <input type="text" class="form-control" id="date" placeholder="09:30">
                 </div>
             </div>
 
             <div class="full input-info">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#select1">Dat cho minh</a></li>
-                    <li><a data-toggle="tab" href="#select2">Dat cho nguoi than</a></li>
+                    <li class="active"><a data-toggle="tab" href="#select1">Đặt cho mình</a></li>
+                    <li><a data-toggle="tab" href="#select2">Đặt cho người thân</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="select1" class="tab-pane fade in active">
@@ -138,7 +95,7 @@
                             <input type="hidden" name="service_id" class="service-id" value=""/>
                             <input type="hidden" name="date" class="date" value=""/>
                             <div class="h-input-group">
-                                <input type="text" name="name" class="h-form-control" placeholder="Ho va ten benh nhan (bat buoc)" aria-describedby="name" required="required">
+                                <input type="text" name="name" class="h-form-control" placeholder="Họ và tên bệnh nhân (bắt buộc)" aria-describedby="name" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
@@ -147,31 +104,32 @@
                                         <input class="h-form-check-input" type="radio" name="gender" id="nam" value="nam" checked="checked"> Nam
                                     </label>
                                     <label>
-                                        <input class="h-form-check-input" type="radio" name="gender" id="nu" value="nu"> Nu
+                                        <input class="h-form-check-input" type="radio" name="gender" id="nu" value="nu"> Nữ
                                     </label>
                                 </div>
                             </div>
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="So dien thoai lien he (bat buoc)" aria-describedby="phone-number" name="phone_number" required="required">
+                                <input type="text" class="h-form-control" placeholder="Số điện thoại liên hệ (bắt buộc)" aria-describedby="phone-number" name="phone_number" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="email" class="h-form-control" placeholder="Dia chi email" aria-describedby="email" name="email">
+                                <input type="email" class="h-form-control" placeholder="Địa chỉ email (nếu có)" aria-describedby="email" name="email">
                                 <span class="h-input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="number" class="h-form-control" placeholder="Nam sinh (bat buoc)" aria-describedby="birthyear" name="birthyear" required="required">
+                                <input type="number" class="h-form-control" placeholder="Năm sinh (bắt buộc)" aria-describedby="birthyear" name="birthyear" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="Dia chi" aria-describedby="address" name="address">
+                                <input type="text" class="h-form-control" placeholder="Địa chỉ" aria-describedby="address" name="address">
                                 <span class="h-input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <textarea class="h-form-control" rows="3" placeholder="Ly do kham, trieu chung gap phai" name="description"></textarea>
+                                <textarea class="h-form-control" rows="3" placeholder="Lý do khám, triệu chứng gặp phải" name="description"></textarea>
                                 <span class="h-input-group-addon"><i class="fa fa-plus-square" aria-hidden="true"></i></span>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Dat lich ngay</button>
+                            <div style="margin: 10px 0"><span>Chúng tôi sẽ liên hệ với bạn ngay sau khi bạn đặt lịch.</span></div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Đặt lịch ngay</button>
                         </form>
                     </div>
                     <div id="select2" class="tab-pane fade">
@@ -182,35 +140,45 @@
                             <input type="hidden" name="service_id" class="service-id" value=""/>
                             <input type="hidden" name="date" class="date" value=""/>
                             <div style="color: #4168ae; font-weight: 900; margin: 5px 0;">
-                                <span>Thong tin nguoi dat lich</span>
+                                <span>Thông tin người đặt lịch</span>
                             </div>
 
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="Ho va ten nguoi dat (bat buoc)" aria-describedby="name" name="orderer_name" required="required">
+                                <input type="text" class="h-form-control" placeholder="Họ và tên người đặt (bắt buộc)" aria-describedby="name" name="orderer_name" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="So dien thoai lien he (bat buoc)" aria-describedby="phone-number" name="orderer_phone_number" required="required">
+                                <input type="text" class="h-form-control" placeholder="Số điện thoại liên hệ (bắt buộc)" aria-describedby="phone-number" name="orderer_phone_number" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="email" class="h-form-control" placeholder="Dia chi email" aria-describedby="email" name="orderer_email">
+                                <input type="email" class="h-form-control" placeholder="Địa chỉ email (nếu có)" aria-describedby="email" name="orderer_email">
                                 <span class="h-input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                             </div>
 
                             <div style="color: #4168ae; font-weight: 900; margin: 5px 0;">
-                                <span>Thong tin benh nhan</span>
+                                <span>Thông tin bệnh nhân</span>
                             </div>
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="Ho va ten benh nhan (bat buoc)" aria-describedby="name" name="name" required="required">
+                                <input type="text" class="h-form-control" placeholder="Họ và tên bệnh nhân (bắt buộc)" aria-describedby="name" name="name" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="text" class="h-form-control" placeholder="So dien thoai benh nhan" aria-describedby="phone-number" name="phone_number">
+                                <div class="h-form-check-inline">
+                                    <label>
+                                        <input class="h-form-check-input" type="radio" name="gender" value="nam" checked="checked"> Nam
+                                    </label>
+                                    <label>
+                                        <input class="h-form-check-input" type="radio" name="gender" value="nu"> Nữ
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="h-input-group">
+                                <input type="text" class="h-form-control" placeholder="Số điện thoại bệnh nhân" aria-describedby="phone-number" name="phone_number">
                                 <span class="h-input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <input type="number" class="h-form-control" placeholder="Nam sinh (bat buoc)" aria-describedby="birthyear" name="birthyear" required="required">
+                                <input type="number" class="h-form-control" placeholder="Năm sinh (bắt buộc)" aria-describedby="birthyear" name="birthyear" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
@@ -218,10 +186,11 @@
                                 <span class="h-input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
                             </div>
                             <div class="h-input-group">
-                                <textarea class="h-form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ly do kham, trieu chung gap phai" name="description"></textarea>
+                                <textarea class="h-form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Lý do khám, triệu chứng gặp phải" name="description"></textarea>
                                 <span class="h-input-group-addon"><i class="fa fa-plus-square" aria-hidden="true"></i></span>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Dat lich ngay</button>
+                            <div style="margin: 10px 0"><span>Chúng tôi sẽ liên hệ với bạn ngay sau khi bạn đặt lịch.</span></div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Đặt lịch ngay</button>
                         </form>
                     </div>
                 </div>
