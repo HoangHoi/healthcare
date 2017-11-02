@@ -6,7 +6,7 @@
         <div class="search-bar">
             <form method="GET" action="./">
                 <div class="input-group">
-                    <input type="text" class="form-control search-field" name="key" placeholder="Search for..." aria-label="Search for...">
+                    <input type="text" class="form-control search-field" name="key" placeholder="Tìm kiếm bác sỹ, bệnh viện, chuyên khoa" aria-label="Search for...">
                     <span class="input-group-btn">
                         <button class="btn btn-primary search-icon" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </span>

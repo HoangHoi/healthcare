@@ -2,7 +2,7 @@
     <div class="panel-body body-content">
         <div class="left-menu">
             <div class="menu-title">
-                Chuyen khoa
+                Chuyên khoa
             </div>
             <ul class="menu-body">
                 <li class="active">
@@ -25,7 +25,7 @@
 
         <div class="left-menu">
             <div class="menu-title">
-                Benh vien
+                Bệnh viện
             </div>
             <ul class="menu-body">
                 <li class="active">

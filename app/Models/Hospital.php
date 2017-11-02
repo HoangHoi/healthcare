@@ -18,4 +18,9 @@ class Hospital extends Model
     protected $fillable = [
         'name', 'address', 'description',
     ];
+
+    public function doctors()
+    {
+        return $this->hasMany('Doctor');
+    }
 }
