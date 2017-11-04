@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::get('/bac-sy', 'DoctorController@search')->name('doctor.search');
-Route::get('/benh-vien', 'HospitalController@search')->name('hospital.search');
-Route::get('/chuyen-khoa', 'SpecialistController@search')->name('specialist.search');
+Route::get('/bac-sy', 'DoctorController@search')->name('api.doctor.search');
+Route::get('/benh-vien', 'HospitalController@search')->name('api.hospital.search');
+Route::get('/chuyen-khoa', 'SpecialistController@search')->name('api.specialist.search');

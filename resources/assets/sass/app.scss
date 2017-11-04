@@ -1,5 +1,5 @@
 // Variables
-@import "variables";
+@import "core/variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
@@ -7,14 +7,15 @@
 // Font Awesome
 @import "~font-awesome/scss/font-awesome";
 
-@import "banner";
-@import "menu";
-@import "top-header";
-@import "navbar";
-@import "content";
-@import "footer";
-@import "social";
-@import "booking";
+@import "core/banner";
+@import "core/menu";
+@import "core/top-header";
+@import "core/navbar";
+@import "core/content";
+@import "core/footer";
+@import "core/social";
+
+@import "pages/booking";
 
 body {
     background-color: #E8EAEE;

@@ -1,0 +1,39 @@
+// Variables
+@import "core/variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Font Awesome
+@import "~font-awesome/scss/font-awesome";
+
+body {
+    background-color: #E8EAEE;
+}
+
+.full {
+    margin: -15px;
+}
+
+.no-border-radius {
+    border-radius: 0;
+}
+
+.panel-heading {
+    .panel-title {
+        font-weight: 900;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+}
+
+.flex {
+    display: flex;
+    &-space-between {
+        justify-content: space-between;
+    }
+    &-align-center {
+        align-items: center;
+    }
+}
+
