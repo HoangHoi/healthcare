@@ -22,7 +22,7 @@ class Doctor extends Model
 
     public function getAvatarAttribute($value)
     {
-        $imageSrc = 'public/' . config('upload.path.doctors_image') . '/' . $value;
+        $imageSrc = 'public/' . config('upload.path.images') . '/' . $value;
         if (Storage::exists($imageSrc)) {
             return Storage::url($imageSrc);
         }
