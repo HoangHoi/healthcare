@@ -14,10 +14,15 @@
                 <span>@yield('page-name')</span>
             </div>
             <div class="panel-control">
-                <button type="button" class="btn btn-primary">Them moi</button>
+                <button type="button" class="btn btn-primary" id="toggle-button" data-toggle-content="toggle-content">Them moi</button>
             </div>
         </div>
         <div class="panel-body">
+            @if (session('action'))
+                <div class="alert alert-{!! session('status') !!}">
+                    {{ session('message') }}
+                </div>
+            @endif
             <div class="create-form" id="create-form" style="display: block;">
                 @yield('create-form')
             </div>

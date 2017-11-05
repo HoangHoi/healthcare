@@ -7,6 +7,7 @@ use App\Core\QueryFilter\SpecialistFilter;
 use App\Http\Controllers\Controller;
 use App\Models\Specialist;
 use App\Http\Controllers\Admin\BaseController;
+use App\Http\Requests\SpecialistRequest;
 
 class SpecialistController extends BaseController
 {
@@ -36,22 +37,45 @@ class SpecialistController extends BaseController
                     'Thong tin',
                 ],
                 'data' => $specialists,
-            ]
+            ],
+            'deleteUrl' => route('admin.specialists.index'),
         ]);
     }
 
-    public function create()
+    public function create(SpecialistRequest $request)
     {
-
+        $newSpecialist = $request->only([
+            'name',
+            'description',
+        ]);
+        Specialist::create($newSpecialist);
+        return redirect()->route('admin.specialists.index')
+            ->with([
+                'action' => 'create',
+                'status' => 'success',
+                'message' => 'Create specialist successful.',
+            ]);
     }
 
-    public function update()
+    public function update(Specialist $specialist, SpecialistRequest $request)
     {
-
+        $specialist->update($request->only(['name', 'description']));
+        return redirect()->route('admin.specialists.index')
+            ->with([
+                'action' => 'update',
+                'status' => 'success',
+                'message' => 'Update specialist successful.',
+            ]);
     }
 
-    public function delete()
+    public function delete(Specialist $specialist)
     {
-
+        $specialist->delete();
+        return redirect()->route('admin.specialists.index')
+            ->with([
+                'action' => 'delete',
+                'status' => 'success',
+                'message' => 'Delete specialist successful.',
+            ]);
     }
 }

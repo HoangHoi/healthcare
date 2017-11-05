@@ -16,6 +16,11 @@ class SessionController extends BaseController
         return redirect()->route('admin.doctors.index');
     }
 
+    public function index()
+    {
+        return redirect()->route('admin.login');
+    }
+
     protected function getLogoutRedirectRoute()
     {
         return 'admin.login';

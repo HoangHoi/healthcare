@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Core\QueryFilter\DoctorFilter;
 use App\Models\Doctor;
+use App\Models\Specialist;
+use App\Models\Hospital;
 use App\Http\Controllers\Admin\BaseController;
+use App\Http\Requests\DoctorRequest;
+use App\Core\Uploader\ImageUploader;
 
 class DoctorController extends BaseController
 {
@@ -43,22 +47,54 @@ class DoctorController extends BaseController
                     'Thong tin',
                 ],
                 'data' => $doctors,
-            ]
+            ],
+            'deleteUrl' => route('admin.doctors.index'),
+            'specialists' => Specialist::all(),
+            'hospitals' => Hospital::all(),
         ]);
     }
 
-    public function create()
+    public function create(DoctorRequest $request)
     {
-
+        $newDoctor = $request->only([
+            'hospital_id',
+            'specialist_id',
+            'name',
+            'info',
+        ]);
+        if ($request->hasFile('avatar')) {
+            $newDoctor['avatar'] = (new ImageUploader)->make($request->file('avatar'));
+        } else {
+            $newDoctor['avatar'] = '';
+        }
+        Doctor::create($newDoctor);
+        return redirect()->route('admin.doctors.index')
+            ->with([
+                'action' => 'create',
+                'status' => 'success',
+                'message' => 'Create doctor successful.',
+            ]);
     }
 
-    public function update()
+    public function update(Doctor $doctor, DoctorRequest $request)
     {
-
+        $doctor->update($request->only(['hospital_id', 'specialist_id', 'name', 'info']));
+        return redirect()->route('admin.doctors.index')
+            ->with([
+                'action' => 'update',
+                'status' => 'success',
+                'message' => 'Update doctor successful.',
+            ]);
     }
 
-    public function delete()
+    public function delete(Doctor $doctor)
     {
-
+        $doctor->delete();
+        return redirect()->route('admin.doctors.index')
+            ->with([
+                'action' => 'delete',
+                'status' => 'success',
+                'message' => 'Delete doctor successful.',
+            ]);
     }
 }
