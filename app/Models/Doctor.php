@@ -31,11 +31,11 @@ class Doctor extends Model
 
     public function hospital()
     {
-        $this->belongsTo(Hospital::class, 'hospital_id');
+        return $this->belongsTo(Hospital::class, 'hospital_id');
     }
 
     public function specialist()
     {
-        $this->belongsTo(Specialist::class);
+        return $this->belongsTo(Specialist::class);
     }
 }
