@@ -10,6 +10,6 @@ class DoctorController extends Controller
 {
     public function search(Request $request, DoctorFilter $query)
     {
-        return Doctor::filterBy($query)->get()->toArray();
+        return Doctor::filterBy($query)->with('hospital', 'specialist')->get()->toArray();
     }
 }
