@@ -46,8 +46,21 @@ $('.result-list').on('click', 'li', function (event) {
             image = image.replace(':image_url:', itemData.avatar);
             serviceDetailHtml += image;
             info = descriptionElement;
+            let infoString = '';
+            if (typeof itemData.specialist != 'undefined') {
+                infoString += 'Chuyên khoa: ' + itemData.specialist.name;
+                infoString += '<br/>';
+            }
+            console.log(typeof itemData.hospital);
+            if (typeof itemData.hospital != 'undefined') {
+                infoString += 'Bệnh viện: ' + itemData.hospital.name;
+                infoString += '<br/>';
+                infoString += 'Địa chỉ: ' + itemData.hospital.address;
+            }
+            infoString += '<br/>';
+            infoString += itemData.info;
             info = info.replace(':name:', itemData.name);
-            info = info.replace(':info:', itemData.info);
+            info = info.replace(':info:', infoString);
             serviceDetailHtml += info;
         break;
         case 'benh-vien':
@@ -56,7 +69,7 @@ $('.result-list').on('click', 'li', function (event) {
             serviceDetailHtml += image;
             info = descriptionElement;
             info = info.replace(':name:', itemData.name);
-            info = info.replace(':info:', itemData.description + '<br/>' + itemData.address);
+            info = info.replace(':info:', 'Địa chỉ: ' + itemData.address + '<br/>' + itemData.description);
             serviceDetailHtml += info;
         break;
         case 'chuyen-khoa':
@@ -89,17 +102,33 @@ let htmlLoading = '<div style="background-color: rgba(250, 251, 254, 1); display
 
 function addSearchResponse(response, type) {
     data = response;
-    let descriptKey = 'description';
-    if (type == 'bac-sy') {
-        descriptKey = 'info';
-    }
     let html = '';
     response.map(function (item, index) {
         let value = htmlItem;
+        let description = '';
+        switch(type) {
+            case 'bac-sy':
+                if (typeof item.specialist != 'undefined') {
+                    description += 'Chuyên khoa: ' + item.specialist.name;
+                    description += '<br/>';
+                }
+                if (typeof item.hospital != 'undefined') {
+                    description += 'Bệnh viện: ' + item.hospital.name;
+                    description += '<br/>';
+                    description += 'Địa chỉ: ' + item.hospital.address;
+                }
+            break;
+            case 'benh-vien':
+                description += 'Địa chỉ: ' + item.address + '<br/>' + item.description;
+            break;
+            case 'chuyen-khoa':
+                description += item.description
+            break;
+        }
         value = value.replace(':index:', index);
         value = value.replace(':type:', type);
         value = value.replace(':title:', item.name);
-        value = value.replace(':body:', item[descriptKey]);
+        value = value.replace(':body:', description);
         html += value;
     });
     if (!html) {
