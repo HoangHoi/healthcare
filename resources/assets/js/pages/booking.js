@@ -47,12 +47,11 @@ $('.result-list').on('click', 'li', function (event) {
             serviceDetailHtml += image;
             info = descriptionElement;
             let infoString = '';
-            if (typeof itemData.specialist != 'undefined') {
+            if (itemData.specialist != null) {
                 infoString += 'Chuyên khoa: ' + itemData.specialist.name;
                 infoString += '<br/>';
             }
-            console.log(typeof itemData.hospital);
-            if (typeof itemData.hospital != 'undefined') {
+            if (itemData.hospital != null) {
                 infoString += 'Bệnh viện: ' + itemData.hospital.name;
                 infoString += '<br/>';
                 infoString += 'Địa chỉ: ' + itemData.hospital.address;
@@ -108,11 +107,11 @@ function addSearchResponse(response, type) {
         let description = '';
         switch(type) {
             case 'bac-sy':
-                if (typeof item.specialist != 'undefined') {
+                if (item.specialist != null) {
                     description += 'Chuyên khoa: ' + item.specialist.name;
                     description += '<br/>';
                 }
-                if (typeof item.hospital != 'undefined') {
+                if (item.hospital != null) {
                     description += 'Bệnh viện: ' + item.hospital.name;
                     description += '<br/>';
                     description += 'Địa chỉ: ' + item.hospital.address;
