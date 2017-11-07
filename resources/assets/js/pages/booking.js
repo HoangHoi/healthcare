@@ -57,6 +57,8 @@ $('.result-list').on('click', 'li', function (event) {
                 infoString += 'Địa chỉ: ' + itemData.hospital.address;
             }
             infoString += '<br/>';
+            infoString += 'Giá khám: ' + itemData.examination_fee + 'đồng';
+            infoString += '<br/>';
             infoString += itemData.info;
             info = info.replace(':name:', itemData.name);
             info = info.replace(':info:', infoString);
@@ -115,6 +117,8 @@ function addSearchResponse(response, type) {
                     description += 'Bệnh viện: ' + item.hospital.name;
                     description += '<br/>';
                     description += 'Địa chỉ: ' + item.hospital.address;
+                    description += '<br/>';
+                    description += 'Giá khám: ' + item.examination_fee + 'đồng';
                 }
             break;
             case 'benh-vien':
@@ -131,7 +135,7 @@ function addSearchResponse(response, type) {
         html += value;
     });
     if (!html) {
-        html = '<div style="display: flex; justify-content: center; align-items: center; padding: 10px; height: 100px; font-weight: 900;">Khong tim thay ket qua</div>';
+        html = '<div style="display: flex; justify-content: center; align-items: center; padding: 10px; height: 100px; font-weight: 900;">Không tìm thấy kết quả</div>';
     }
     $(`#${type}-goi-y`).html(html);
 }
@@ -178,7 +182,7 @@ $('#tim-benh-vien').on('keypress focus', function(event) {
     }, 2000);
 });
 
-let errorText = 'Loi! Ban chua chon :type:. Neu ban chua quyet dinh chon :type: nao thi hay chon muc "Tu van toi chon bac sy". Chung toi se goi dien va tu van cho ban.';
+let errorText = 'Lỗi! Bạn chưa chọn :type:. Nếu bạn chưa quyết định chọn :type: nào thì hãy chọn mục "Tư vấn tôi chọn bác sỹ". Chúng tôi sẽ gọi điện tư vấn cho bạn';
 
 $('.booking-form').on('submit', function (event) {
     console.log(event);
