@@ -27,8 +27,8 @@ class DoctorController extends BaseController
                 $data = [
                     $idx + 1,
                     $item->name,
-                    $item->hospital->name,
-                    $item->specialist->name,
+                    $item->hospital ? $item->hospital->name : '',
+                    $item->specialist ? $item->specialist->name : '',
                     $item->examination_fee,
                     $item->info,
                 ];
