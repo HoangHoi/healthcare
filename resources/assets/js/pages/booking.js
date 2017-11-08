@@ -122,7 +122,7 @@ function addSearchResponse(response, type) {
                 }
             break;
             case 'benh-vien':
-                description += 'Địa chỉ: ' + item.address + '<br/>' + item.description;
+                description += 'Địa chỉ: ' + item.address;
             break;
             case 'chuyen-khoa':
                 description += item.description
