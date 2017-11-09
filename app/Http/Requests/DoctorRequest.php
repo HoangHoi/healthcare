@@ -28,6 +28,7 @@ class DoctorRequest extends FormRequest
             'specialist_id' => 'required|exists:specialists,id',
             'name' => 'required|string',
             'info' => 'string',
+            'examination_fee' => 'numeric',
          ];
     }
 }

@@ -38,7 +38,7 @@ class SpecialistController extends BaseController
                 ],
                 'data' => $specialists,
             ],
-            'deleteUrl' => route('admin.specialists.index'),
+            'baseUrl' => route('admin.specialists.index'),
         ]);
     }
 
@@ -55,6 +55,13 @@ class SpecialistController extends BaseController
                 'status' => 'success',
                 'message' => 'Create specialist successful.',
             ]);
+    }
+
+    public function getUpdate(Specialist $specialist)
+    {
+        return view('admin.pages.specialist-update', [
+            'specialist' => $specialist,
+        ]);
     }
 
     public function update(Specialist $specialist, SpecialistRequest $request)

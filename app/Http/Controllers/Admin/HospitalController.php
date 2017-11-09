@@ -41,7 +41,7 @@ class HospitalController extends BaseController
                 ],
                 'data' => $hospitals,
             ],
-            'deleteUrl' => route('admin.hospitals.index'),
+            'baseUrl' => route('admin.hospitals.index'),
         ]);
     }
 
@@ -66,9 +66,22 @@ class HospitalController extends BaseController
             ]);
     }
 
+    public function getUpdate(Hospital $hospital)
+    {
+        return view('admin.pages.hospital-update', [
+            'hospital' => $hospital,
+        ]);
+    }
+
     public function update(Hospital $hospital, HospitalRequest $request)
     {
-        $hospital->update($request->only(['name', 'address', 'description']));
+        $updateRequest = $request->only(['name', 'address', 'description']);
+        if ($request->hasFile('image')) {
+            $updateRequest['image'] = (new ImageUploader)->make($request->file('image'));
+        } else {
+            $updateRequest['image'] = '';
+        }
+        $hospital->update($updateRequest);
         return redirect()->route('admin.hospitals.index')
             ->with([
                 'action' => 'update',

@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::group(['prefix' => '{doctor}'], function () {
             Route::post('delete', 'DoctorController@delete')->name('admin.doctors.delete');
             Route::post('update', 'DoctorController@update')->name('admin.doctors.update');
+            Route::get('update', 'DoctorController@getUpdate')->name('admin.doctors.getUpdate');
         });
     });
 
@@ -42,6 +43,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::post('create', 'HospitalController@create')->name('admin.hospitals.create');
         Route::group(['prefix' => '{hospital}'], function () {
             Route::post('delete', 'HospitalController@delete')->name('admin.hospitals.delete');
+            Route::get('update', 'HospitalController@getUpdate')->name('admin.hospitals.getUpdate');
             Route::post('update', 'HospitalController@update')->name('admin.hospitals.update');
         });
     });
@@ -51,6 +53,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::post('create', 'SpecialistController@create')->name('admin.specialists.create');
         Route::group(['prefix' => '{specialist}'], function () {
             Route::post('delete', 'SpecialistController@delete')->name('admin.specialists.delete');
+            Route::get('update', 'SpecialistController@getUpdate')->name('admin.specialists.getUpdate');
             Route::post('update', 'SpecialistController@update')->name('admin.specialists.update');
         });
     });

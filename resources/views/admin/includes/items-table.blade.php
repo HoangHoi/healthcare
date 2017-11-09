@@ -4,6 +4,7 @@
             @foreach($items['key'] as $key)
                 <th>{!! $key !!}</th>
             @endforeach
+            <th>Sua</th>
             <th>Xoa</th>
         </tr>
     </thead>
@@ -14,7 +15,14 @@
                     <td>{!! $value !!}</td>
                 @endforeach
                 <td>
-                    <form action="{!! "{$deleteUrl}/{$id}/delete"!!}" method="POST">
+                    <a href="{!! "{$baseUrl}/{$id}/update" !!}">
+                        <button type="submit">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: blue;"></i>
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <form action="{!! "{$baseUrl}/{$id}/delete" !!}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit">
                             <i class="fa fa-times delete" data-id="{!! $id !!}" aria-hidden="true" style="color: red;"></i>
