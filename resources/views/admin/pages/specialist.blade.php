@@ -9,7 +9,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Ten:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nhap vao tem">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nhap vao ten">
             </div>
         </div>
         <div class="form-group">

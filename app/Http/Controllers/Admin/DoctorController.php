@@ -48,7 +48,7 @@ class DoctorController extends BaseController
                 ],
                 'data' => $doctors,
             ],
-            'deleteUrl' => route('admin.doctors.index'),
+            'baseUrl' => route('admin.doctors.index'),
             'specialists' => Specialist::all(),
             'hospitals' => Hospital::all(),
         ]);
@@ -61,6 +61,7 @@ class DoctorController extends BaseController
             'specialist_id',
             'name',
             'info',
+            'examination_fee',
         ]);
         if ($request->hasFile('avatar')) {
             $newDoctor['avatar'] = (new ImageUploader)->make($request->file('avatar'));
@@ -76,9 +77,24 @@ class DoctorController extends BaseController
             ]);
     }
 
+    public function getUpdate(Doctor $doctor)
+    {
+        return view('admin.pages.doctor-update', [
+            'doctor' => $doctor,
+            'specialists' => Specialist::all(),
+            'hospitals' => Hospital::all(),
+        ]);
+    }
+
     public function update(Doctor $doctor, DoctorRequest $request)
     {
-        $doctor->update($request->only(['hospital_id', 'specialist_id', 'name', 'info']));
+        $updateRequest = $request->only(['hospital_id', 'specialist_id', 'name', 'info', 'examination_fee']);
+        if ($request->hasFile('avatar')) {
+            $updateRequest['avatar'] = (new ImageUploader)->make($request->file('avatar'));
+        } else {
+            $updateRequest['avatar'] = '';
+        }
+        $doctor->update($updateRequest);
         return redirect()->route('admin.doctors.index')
             ->with([
                 'action' => 'update',

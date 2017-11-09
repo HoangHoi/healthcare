@@ -57,7 +57,7 @@ $('.result-list').on('click', 'li', function (event) {
                 infoString += 'Địa chỉ: ' + itemData.hospital.address;
             }
             infoString += '<br/>';
-            infoString += 'Giá khám: ' + itemData.examination_fee + 'đồng';
+            infoString += '<span style="color: red; font-weight: 900">Giá khám: ' + numberWithCommas(itemData.examination_fee) + ' đồng</span>';
             infoString += '<br/>';
             infoString += itemData.info;
             info = info.replace(':name:', itemData.name);
@@ -118,7 +118,7 @@ function addSearchResponse(response, type) {
                     description += '<br/>';
                     description += 'Địa chỉ: ' + item.hospital.address;
                     description += '<br/>';
-                    description += 'Giá khám: ' + item.examination_fee + 'đồng';
+                    description += '<span style="color: red; font-weight: 900">Giá khám: ' + numberWithCommas(item.examination_fee) + ' đồng</span>';
                 }
             break;
             case 'benh-vien':
