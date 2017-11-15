@@ -26,6 +26,7 @@
     </div>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="https://uhchat.net/code.php?f=814d18"></script>
     @stack('scripts')
 </body>
 </html>
