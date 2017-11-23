@@ -38,4 +38,9 @@ class Doctor extends Model
     {
         return $this->belongsTo(Specialist::class);
     }
+
+    public function times()
+    {
+        return $this->morphMany(Times::class, 'entityable');
+    }
 }

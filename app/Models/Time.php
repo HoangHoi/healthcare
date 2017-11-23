@@ -19,6 +19,11 @@ class Time extends Model
      * @var array
      */
     protected $fillable = [
-        'content', 'day_of_week',
+        'content', 'day_of_week', 'entityable_id', 'entityable_type'
     ];
+
+    public function entityable()
+    {
+        return $this->morphTo();
+    }
 }
