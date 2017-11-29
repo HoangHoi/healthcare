@@ -91,8 +91,6 @@ class DoctorController extends BaseController
         $updateRequest = $request->only(['hospital_id', 'specialist_id', 'name', 'info', 'examination_fee']);
         if ($request->hasFile('avatar')) {
             $updateRequest['avatar'] = (new ImageUploader)->make($request->file('avatar'));
-        } else {
-            $updateRequest['avatar'] = '';
         }
         $doctor->update($updateRequest);
         return redirect()->route('admin.doctors.index')
