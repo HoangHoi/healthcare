@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use App\Http\ViewComposers\LeftMenuComposer;
+use App\Http\ViewComposers\TopMenuComposer;
+use App\Http\ViewComposers\BreadcrumbComposer;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -14,8 +17,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Using class based composers...
-        View::composer('includes.left-menu', 'App\Http\ViewComposers\LeftMenuComposer');
+        View::composer('includes.left-menu', LeftMenuComposer::class);
+        View::composer('includes.top-menu', TopMenuComposer::class);
+        View::composer('includes.breadcrumb', BreadcrumbComposer::class);
     }
 
     /**

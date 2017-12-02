@@ -3,16 +3,6 @@
 use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Specialist;
-// use App\Models\Order;
-// use App\Models\OrderItem;
-// use App\Models\Partner;
-// use App\Models\SocialUser;
-// use App\Models\Store;
-// use App\Models\User;
-// use App\Models\VegetableCategory;
-// use App\Models\Vegetable;
-// use App\Models\Trunk;
-// use App\Models\TrunkStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +30,7 @@ $factory->define(Doctor::class, function (Faker\Generator $faker) {
     $faker->addProvider(new Faker\Provider\en_US\PhoneNumber($faker));
     $faker->addProvider(new Faker\Provider\en_US\Text($faker));
     $faker->addProvider(new Faker\Provider\en_US\Person($faker));
-
+    $name = $faker->name;
     return [
         'hospital_id' => function() {
             return factory(Hospital::class)->create()->id;
@@ -48,11 +38,11 @@ $factory->define(Doctor::class, function (Faker\Generator $faker) {
         'specialist_id' => function() {
             return factory(Specialist::class)->create()->id;
         },
-        'name' => $faker->name,
+        'name' => $name,
         'avatar' => $faker->imageUrl(100, 100),
         'info' => $faker->realText(),
         'examination_fee' => $faker->numberBetween(2, 8) * 50000,
-
+        'slug' => make_slug($name),
     ];
 });
 
@@ -60,19 +50,23 @@ $factory->define(Hospital::class, function (Faker\Generator $faker) {
     $faker->addProvider(new Faker\Provider\en_US\Company($faker));
     $faker->addProvider(new Faker\Provider\en_US\Text($faker));
     $faker->addProvider(new Faker\Provider\en_US\Address($faker));
+    $name = $faker->company();
     return [
-        'name' => $faker->company(),
+        'name' => $name,
         'image' => $faker->imageUrl(100, 100),
         'address' => $faker->address(),
         'description' => $faker->realText(),
+        'slug' => make_slug($name),
     ];
 });
 
 $factory->define(Specialist::class, function (Faker\Generator $faker) {
     $faker->addProvider(new Faker\Provider\en_US\Company($faker));
     $faker->addProvider(new Faker\Provider\en_US\Text($faker));
+    $name = $faker->jobTitle();
     return [
-        'name' => $faker->jobTitle(),
+        'name' => $name,
         'description' => $faker->realText(),
+        'slug' => make_slug($name),
     ];
 });

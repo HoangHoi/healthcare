@@ -23,9 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('booking.index');
-        // return view('pages.home', [
-        //     'topActive' => 0,
-        // ]);
+        // dd(make_slug('Cách điều trị bệnh tiểu đường'));
+        return view('pages.home');
     }
 }

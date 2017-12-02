@@ -21,6 +21,10 @@ Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/trang-chu', 'HomeController@index')->name('home');
 Route::get('/dat-lich-kham', 'BookingController@index')->name('booking.index');
 Route::post('/dat-lich-kham', 'BookingController@store')->name('booking.store');
+Route::get('benh-vien', 'HospitalController@index')->name('hospital.index');
+Route::get('benh-vien/{hospital}_{hospitalName}', 'HospitalController@show')->name('hospital.show');
+Route::get('chuyen-khoa', 'SpecialistController@index')->name('specialist.index');
+Route::get('chuyen-khoa/{specialist}_{specialistName}', 'SpecialistController@show')->name('specialist.show');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'SessionController@index')->name('admin.index');

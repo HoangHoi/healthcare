@@ -99,3 +99,66 @@ if (!function_exists('get_resized_image')) {
         return Storage::disk('public')->url($url);
     }
 }
+
+if (!function_exists('encrypt_id')) {
+    /**
+     * @param integer $id
+     * @return string
+     */
+    function encrypt_id($id)
+    {
+        if (!$id) {
+            return null;
+        }
+
+        $id = intval($id);
+        $id = dechex($id + 307843200);
+        $id = str_replace(1, 'H', $id);
+        $id = str_replace(2, 'L', $id);
+        $id = str_replace(3, 'R', $id);
+        $id = str_replace(4, 'V', $id);
+        $id = str_replace(5, 'N', $id);
+
+        return $id;
+    }
+}
+
+if (!function_exists('decrypt_id')) {
+    /**
+     * @param string $id
+     * @return integer
+     */
+    function decrypt_id($id)
+    {
+        if (!$id) {
+            return null;
+        }
+
+        $id = str_replace('H', 1, $id);
+        $id = str_replace('L', 2, $id);
+        $id = str_replace('R', 3, $id);
+        $id = str_replace('V', 4, $id);
+        $id = str_replace('N', 5, $id);
+
+        $id = hexdec($id);
+        return $id - 307843200;
+    }
+}
+
+if (!function_exists('make_slug')) {
+    /**
+     * @param string $name
+     * @return string
+     */
+    function make_slug($name)
+    {
+        return str_slug($name);
+        // if (!$name) {
+        //     return null;
+        // }
+        // $name = convert_vietnamese_to_ascii($name);
+
+        // $regex = '/[\ `~!@#$%^&*()\-=+{}<>,._\-\\\\\/\?\|;:\"\'\[\]]+/';
+        // return strtolower(trim(preg_replace($regex, '-', $name), '-'));
+    }
+}

@@ -12,4 +12,14 @@ class SpecialistController extends Controller
     {
         return Specialist::filterBy($query)->get()->toArray();
     }
+
+    public function index()
+    {
+        return view('pages.home');
+    }
+
+    public function show(Specialist $specialist, $hospitalName)
+    {
+        return view('pages.home');
+    }
 }
