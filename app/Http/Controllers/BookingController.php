@@ -13,9 +13,7 @@ class BookingController extends Controller
 {
     public function index()
     {
-        return view('pages.booking', [
-            'topActive' => 1,
-        ]);
+        return view('pages.booking');
     }
 
     public function store(Request $request)
@@ -76,7 +74,6 @@ class BookingController extends Controller
         }
         Mail::to(env('MAIL_DEST'))->queue(new BookingRequested($data));
         return view('pages.booking-success', [
-            'topActive' => 1,
             'data' => $data,
         ]);
     }

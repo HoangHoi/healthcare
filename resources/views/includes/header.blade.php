@@ -22,9 +22,11 @@
         </div>
     </div>
     <div class="social-bar">
-        <div class="social-item facebook">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-        </div>
+        <a href="https://www.facebook.com/healthcaredatkhamtructuyen/">
+            <div class="social-item facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </div>
+        </a>
         <div class="social-item google-plus">
             <i class="fa fa-google-plus" aria-hidden="true"></i>
         </div>

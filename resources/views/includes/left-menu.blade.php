@@ -1,49 +1,33 @@
 <div class="panel panel-default">
     <div class="panel-body body-content">
-        <div class="left-menu">
-            <div class="menu-title">
-                Chuyên khoa
+        @if(isset($specialists))
+            <div class="left-menu">
+                <div class="menu-title">
+                    Chuyên khoa
+                </div>
+                <ul class="menu-body">
+                    @foreach($specialists as $specialist)
+                        <li {!! (isset($specialist['menuActived']) && $specialist['menuActived']) ? 'class="active"' : ''!!}>
+                            <a href="{!! route('specialist.show', ['specialistName' => $specialist['slug'], 'specialist' => $specialist['id']]) !!}">{!! $specialist['name'] !!}</a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
-            <ul class="menu-body">
-                <li class="active">
-                    <a>Khoa than kinh</a>
-                </li>
-                <li>
-                    <a>Khoa ruot</a>
-                </li>
-                <li>
-                    <a>Khoa mat</a>
-                </li>
-                <li>
-                    <a>Khoa rang - ham - mat</a>
-                </li>
-                <li>
-                    <a>Khoa than kinh</a>
-                </li>
-            </ul>
-        </div>
+        @endif
 
-        <div class="left-menu">
-            <div class="menu-title">
-                Bệnh viện
+        @if(isset($hospitals))
+            <div class="left-menu">
+                <div class="menu-title">
+                    Bệnh viện
+                </div>
+                <ul class="menu-body">
+                    @foreach($hospitals as $hospital)
+                        <li {!! (isset($hospital['menuActived']) && $hospital['menuActived']) ? 'class="active"' : ''!!}>
+                            <a href="{!! route('hospital.show', ['hospitalName' => $hospital['slug'], 'hospital' => $hospital['id']]) !!}">{!! $hospital['name'] !!}</a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
-            <ul class="menu-body">
-                <li class="active">
-                    <a>Benh vien bach mai</a>
-                </li>
-                <li>
-                    <a>Benh vien da lieu</a>
-                </li>
-                <li>
-                    <a>Benh vien mat</a>
-                </li>
-                <li>
-                    <a>Benh vien 108</a>
-                </li>
-                <li>
-                    <a>Nha thuoc Dinh Cong</a>
-                </li>
-            </ul>
-        </div>
+        @endif
     </div>
 </div>
