@@ -31,7 +31,7 @@ class HospitalController extends BaseController
             })
             ->toArray();
 
-        return view('admin.pages.hospital', [
+        return view('admin.pages.hospital.list', [
             'items' => [
                 'key' => [
                     'STT',
@@ -68,7 +68,7 @@ class HospitalController extends BaseController
 
     public function getUpdate(Hospital $hospital)
     {
-        return view('admin.pages.hospital-update', [
+        return view('admin.pages.hospital.update', [
             'hospital' => $hospital,
         ]);
     }
