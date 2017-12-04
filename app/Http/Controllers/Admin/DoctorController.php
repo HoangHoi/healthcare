@@ -36,7 +36,7 @@ class DoctorController extends BaseController
             })
             ->toArray();
 
-        return view('admin.pages.doctor', [
+        return view('admin.pages.doctor.list', [
             'items' => [
                 'key' => [
                     'STT',
@@ -79,7 +79,7 @@ class DoctorController extends BaseController
 
     public function getUpdate(Doctor $doctor)
     {
-        return view('admin.pages.doctor-update', [
+        return view('admin.pages.doctor.update', [
             'doctor' => $doctor,
             'specialists' => Specialist::all(),
             'hospitals' => Hospital::all(),

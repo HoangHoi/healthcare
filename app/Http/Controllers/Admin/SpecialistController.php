@@ -29,7 +29,7 @@ class SpecialistController extends BaseController
             })
             ->toArray();
 
-        return view('admin.pages.specialist', [
+        return view('admin.pages.specialist.list', [
             'items' => [
                 'key' => [
                     'STT',
@@ -59,7 +59,7 @@ class SpecialistController extends BaseController
 
     public function getUpdate(Specialist $specialist)
     {
-        return view('admin.pages.specialist-update', [
+        return view('admin.pages.specialist.update', [
             'specialist' => $specialist,
         ]);
     }
