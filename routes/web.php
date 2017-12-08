@@ -39,6 +39,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::post('delete', 'DoctorController@delete')->name('admin.doctors.delete');
             Route::post('update', 'DoctorController@update')->name('admin.doctors.update');
             Route::get('update', 'DoctorController@getUpdate')->name('admin.doctors.getUpdate');
+            Route::group(['prefix' => 'times'], function () {
+                Route::post('create', 'DoctorTimeController@create')->name('admin.doctors.time.create');
+                Route::post('{time}/delete', 'DoctorTimeController@delete')->name('admin.doctors.time.delete');
+            });
         });
     });
 

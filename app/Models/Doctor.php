@@ -26,7 +26,7 @@ class Doctor extends Model
         if (Storage::exists($imageSrc)) {
             return Storage::url($imageSrc);
         }
-        return Storage::url('public/' . config('upload.path.default') . '/' . config('upload.default.user_image'));
+        return Storage::url('public/' . config('upload.path.default') . '/' . config('upload.default.doctor_image'));
     }
 
     public function hospital()
@@ -41,6 +41,6 @@ class Doctor extends Model
 
     public function times()
     {
-        return $this->morphMany(Times::class, 'entityable');
+        return $this->morphMany(Time::class, 'entityable');
     }
 }

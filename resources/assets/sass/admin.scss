@@ -7,6 +7,10 @@
 // Font Awesome
 @import "~font-awesome/scss/font-awesome";
 
+// Doctor style
+@import "admin/doctor";
+@import "admin/time-list";
+
 body {
     background-color: #E8EAEE;
 }

@@ -10,12 +10,14 @@
     @stack('styles')
 </head>
 <body>
-    <div id="app" style="margin-top: 15px;">
-        <div class="container">
+    @include('admin.includes.top-menu')
+    <div id="app" style="margin-top: 75px">
+        <div class="container-fluid">
             @yield('body')
         </div>
     </div>
     <!-- Scripts -->
+    @stack('scripts-before')
     <script src="{{ mix('js/admin.js') }}"></script>
     @stack('scripts')
 </body>

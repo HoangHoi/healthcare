@@ -19,7 +19,7 @@ class Time extends Model
      * @var array
      */
     protected $fillable = [
-        'content', 'day_of_week', 'entityable_id', 'entityable_type'
+        'begin_time', 'end_time', 'day_of_week', 'entityable_id', 'entityable_type'
     ];
 
     public function entityable()
