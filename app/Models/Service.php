@@ -18,6 +18,6 @@ class Service extends Model
 
     public function times()
     {
-        return $this->morphMany(Times::class, 'entityable');
+        return $this->morphMany(Time::class, 'entityable');
     }
 }

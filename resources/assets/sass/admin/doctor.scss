@@ -1,0 +1,19 @@
+@import "~eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker";
+
+.update-form {
+    .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%;
+        .avatar-image {
+            width: 60px;
+            height: 60px;
+            background-color: #c3c3c3;
+            ackground-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+        }
+    }
+}

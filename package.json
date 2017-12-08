@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.5.1",
     "jquery-datetimepicker": "^2.5.11",
