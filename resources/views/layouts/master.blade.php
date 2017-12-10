@@ -5,11 +5,11 @@
     <div class="col-md-3 hidden-sm hidden-xs">
         @include('includes.left-menu')
     </div>
-    <div class="col-md-6 col-sm-8 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
         @yield('content')
     </div>
-    <div class="col-md-3 col-sm-4 col-xs-12">
-        {{-- @include('includes.right-menu') --}}
+    <div class="col-md-3 hidden-sm hidden-xs">
+        @include('includes.right-menu-info')
     </div>
 </div>
 @endsection

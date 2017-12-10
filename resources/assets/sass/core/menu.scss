@@ -78,3 +78,85 @@
         }
     }
 }
+
+.right-menu-info {
+    position: relative;
+    .menu-title {
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: 900;
+        padding: 0 10px 5px 10px;
+        border-bottom: solid 1px $menu-title;
+    }
+    .menu-body {
+        padding: 0;
+        margin: 0;
+        .phone-number {
+            .info-title {
+                font-size: 1.7em;
+                font-weight: 900;
+                width: 80px;
+                padding-right: 10px;
+            }
+            .info-content {
+                text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+                color: white;
+                font-size: 1.5em;
+            }
+
+
+
+        }
+        .address {
+            .info-title {
+                font-size: 1.7em;
+                font-weight: 900;
+                width: 80px;
+                padding-right: 12px;
+            }
+            .info-content {
+
+            }
+
+        }
+    }
+}
+
+// div {
+//     width: 100px;
+//     height: 100px;
+//     background-color: red;
+//     position: relative;
+//     /* Safari 4.0 - 8.0 */
+//     -webkit-animation-name: example;
+//     -webkit-animation-duration: 5s;
+//     -webkit-animation-timing-function: linear;
+//     -webkit-animation-delay: 2s;
+//     -webkit-animation-iteration-count: infinite;
+//     -webkit-animation-direction: alternate;
+//     /* Standard syntax */
+//     animation-name: example;
+//     animation-duration: 5s;
+//     animation-timing-function: linear;
+//     animation-delay: 2s;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes discoloration {
+    0%   {color:red;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:red;}
+}
+
+/* Standard syntax */
+@keyframes discoloration {
+    0%   {color:red;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:red;}
+}
