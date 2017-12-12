@@ -1,0 +1,63 @@
+.filter-tool-bar {
+    padding: 0;
+    padding-top: 0;
+    position: relative;
+    @media (min-width: $screen-sm-min) {
+        padding: 5px;
+    }
+    margin-bottom: 15px;
+    background-color: green;
+    color: white;
+    .tool-bar-content {
+        display: block;
+        justify-content: center;
+        width: 100%;
+        padding: 5px 0;
+        position: relative;
+        @media (min-width: $screen-sm-min) {
+            display: flex;
+            padding: 0;
+        }
+        .hospitals {
+            min-width: calc(30% - 21px);
+            margin: 0 5px 5px 5px;
+            @media (min-width: $screen-sm-min) {
+                margin: 0 10px 0 0;
+            }
+            select {
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+        .specialists {
+            min-width: calc(40% - 21px);
+            margin: 0 5px 5px 5px;
+            @media (min-width: $screen-sm-min) {
+                margin: 0 10px 0 0;
+            }
+            select {
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+        .doctor {
+            min-width: calc(30% - 21px);
+            margin: 0 5px 5px 5px;
+            @media (min-width: $screen-sm-min) {
+                margin: 0 10px 0 0;
+            }
+            input {
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+        .submit-button {
+            width: 33px;
+            margin: 0 5px 5px 5px;
+            @media (min-width: $screen-sm-min) {
+                margin: 0;
+            }
+            font-size: 15px;
+        }
+    }
+}

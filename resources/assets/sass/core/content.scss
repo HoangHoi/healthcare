@@ -9,7 +9,6 @@
         .item {
             display: flex;
             border-bottom: dashed 1px #3c3c3c;
-            // margin-bottom: 20px;
             padding-bottom: 10px;
             .item-image {
                 margin-right: 20px;
@@ -26,7 +25,10 @@
             .item-detail {
                 .name {
                     font-size: 18px;
-                    // text-transform: upper-alpha;
+                    a {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
                 }
                 .description {
                     margin-top: 10px;
@@ -40,12 +42,12 @@
                 font-weight: 900;
                 text-transform: uppercase;
                 .date {
+                    cursor: pointer;
                     color: #3097d1;
                     border: 0;
                     background: none;
                     border-bottom: solid 1px lightskyblue;
                     &:hover, &:focus {
-                        // border: 0;
                         outline: none;
                     }
                 }
