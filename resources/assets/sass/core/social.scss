@@ -1,6 +1,7 @@
 .social-bar {
     display: flex;
     position: relative;
+    z-index: 2000;
     @media (min-width: $grid-float-breakpoint) {
         position: fixed;
         left: 0px;

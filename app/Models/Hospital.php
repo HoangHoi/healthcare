@@ -22,7 +22,7 @@ class Hospital extends Model
 
     public function doctors()
     {
-        return $this->hasMany('Doctor');
+        return $this->hasMany(Doctor::class);
     }
 
     public function getImageAttribute($value)

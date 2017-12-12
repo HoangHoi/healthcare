@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.booking')
 
 @section('content')
 <div class="panel panel-default">
