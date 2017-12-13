@@ -18,6 +18,8 @@
 // Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('lien-he', 'HomeController@contact')->name('contact');
+Route::get('cam-nang', 'PostController@index')->name('post.index');
 // Route::get('/trang-chu', 'HomeController@index')->name('home');
 Route::get('/dat-lich-kham', 'BookingController@index')->name('booking.index');
 Route::post('/dat-lich-kham', 'BookingController@store')->name('booking.store');

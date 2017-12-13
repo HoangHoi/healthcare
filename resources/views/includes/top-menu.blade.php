@@ -16,8 +16,8 @@
             <li class="navbar-item {!! $topActive == 1 ? 'active' : '' !!}"><a href="{!! route('booking.index') !!}">Đặt lịch nhanh</a></li>
             {{-- <li class="navbar-item {!! $topActive == 2 ? 'active' : '' !!}"><a href="{!! route('hospital.index') !!}">Bệnh viện</a></li> --}}
             {{-- <li class="navbar-item {!! $topActive == 3 ? 'active' : '' !!}"><a href="{!! route('specialist.index') !!}">Chuyen Khoa</a></li> --}}
-            <li class="navbar-item {!! $topActive == 4 ? 'active' : '' !!}"><a href="{!! route('home') !!}">Cẩm nang</a></li>
-            <li class="navbar-item {!! $topActive == 5 ? 'active' : '' !!}"><a href="{!! route('home') !!}">Liên hệ</a></li>
+            <li class="navbar-item {!! $topActive == 4 ? 'active' : '' !!}"><a href="{!! route('post.index') !!}">Cẩm nang</a></li>
+            <li class="navbar-item {!! $topActive == 5 ? 'active' : '' !!}"><a href="{!! route('contact') !!}">Liên hệ</a></li>
         </ul>
     </div>
 </nav>

@@ -1,16 +1,16 @@
 <div class="panel panel-default left-menu-description">
     <div class="panel-body">
         <div>
-            <div class="menu-title">Loi ich khi dat lich tai Healthcare</div>
+            <div class="menu-title">Lợi ích khi đặt lịch khám tại Healthcare</div>
             <div class="menu-body">
                 <ul>
-                    <li>Khong phai cho doi khi den kham</li>
-                    <li>Nhan vien tu van nhiet tinh, chu dao</li>
-                    <li>Ket noi dung benh nhan, dung bac sy</li>
-                    <li>Dat lich kham 24/7 tien loi</li>
-                    <li>Nhieu bac sy chuyen khoa gioi, uy tin</li>
-                    <li>Thong tin bac sy ro rang</li>
-                    <li>Dat lich hoan toan mien phi</li>
+                    <li>Không phải chờ đợi khi đến khám</li>
+                    <li>Nhân viên tư vấn nhiệt tình chu đáo</li>
+                    <li>Kết nối đúng bệnh nhân, đúng bác sỹ</li>
+                    <li>Đặt lịch khám 14/7 tiện lợi</li>
+                    <li>Nhiều bác sỹ chuyên khoa giỏi, uy tín</li>
+                    <li>Thông tin bác sỹ rõ ràng</li>
+                    <li>Đặt lịch hoàn toàn miễn phí</li>
                 </ul>
             </div>
         </div>

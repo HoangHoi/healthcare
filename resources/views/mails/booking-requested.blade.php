@@ -5,6 +5,7 @@
         <div><span style="font-weight: 900;">{!! $data['service_title_name'] !!}:</span> <span style="color: blue">{!! $data['service_name'] !!}</span></div>
     @endif
     <div><span style="font-weight: 900;">Ngày khám:</span> <span style="color: blue">{!! $data['date'] !!}</span></div>
+    <div><span style="font-weight: 900;">Giờ khám:</span> <span style="color: blue">{!! $data['time'] !!}</span></div>
     <div style="margin-top: 15px; font-size: 1.3em; font-weight: 900">Thông tin người đặt</div>
     @if($data['type'] == 'dat-cho-minh')
         <div><span style="font-weight: 900;">Tên:</span> <span style="color: blue">{!! $data['name'] !!}</span></div>

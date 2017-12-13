@@ -33,4 +33,9 @@ class Hospital extends Model
         }
         return Storage::url('public/' . config('upload.path.default') . '/' . config('upload.default.hospital_image'));
     }
+
+    public function requests()
+    {
+        return $this->morphMany(Request::class, 'entityable');
+    }
 }
