@@ -4,169 +4,65 @@
 @include('includes.filter-tool-bar')
 
 <div class="doctors-list">
-    <div class="panel panel-default content">
-        <div class="panel-body body-content">
-            <div class="content-item">
-                <div class="item">
-                    <div class="item-image">
-                        <div class="image" style="background-image: url('images/doctors/bacsy.jpg');"></div>
-                    </div>
-                    <div class="item-detail">
-                        <div class="name">
-                            <a href="#">Bac Sy Hoang Huu Hoi</a>
-                        </div>
-                        <div class="description">
-                            <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
-                            <br/>
-                            <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
-                        </div>
-                    </div>
-                </div>
+    @if(count($doctors) <= 0)
+        <div>Khong co bac sy de dat lich</div>
+    @endif
 
-                <div class="schedule">
-                    <div class="schedule-title">
-                        <span>Dat lich kham</span>
-                        <select name="date" class="date">
-                            <option>Thu 4 - 02/09</option>
-                            <option>Thu 5 - 03/09</option>
-                            <option>Thu 6 - 04/09</option>
-                            <option>Thu 7 - 05/09</option>
-                        </select>
-                    </div>
-                    <div class="schedule-detail">
-                        <ul>
-                            <li><a href="">09:30</a></li>
-                            <li><a href="">10:00</a></li>
-                            <li><a href="">10:30</a></li>
-                            <li><a href="">11:00</a></li>
-                            <li><a href="">11:30</a></li>
-                            <li><a href="">13:30</a></li>
-                            <li><a href="">14:00</a></li>
-                            <li><a href="">14:30</a></li>
-                            <li><a href="">15:00</a></li>
-                            <li><a href="">15:30</a></li>
-                            <li><a href="">16:30</a></li>
-                        </ul>
-                        <div class="noty">
-                            <span><i class="fa fa-hand-o-up" aria-hidden="true"></i> Chon va dat lich mien phi</span>
+    @foreach($doctors as $doctor)
+        <div class="panel panel-default content">
+            <div class="panel-body body-content">
+                <div class="content-item">
+                    <div class="item">
+                        <div class="item-image">
+                            <div class="image" style="background-image: url('{!! $doctor['avatar'] !!}');"></div>
                         </div>
-                        <div class="price">Gia kham: <span>200.000<sup>d</sup></span></div>
-                        <div class="insurance">Loai bao hiem ap dung. <a href="#">Xem chi tiet</a></div>
+                        <div class="item-detail">
+                            <div class="name">
+                                <a>Bác sỹ {!! $doctor['name'] !!}</a>
+                            </div>
+                            <div class="description">
+                                <span style="font-weight: 900">Bác sỹ khám chuyên khoa {!! $doctor['specialist']['name'] !!}</span>
+                                <br/>
+                                <span style="font-weight: 900">Bệnh Viện {!! $doctor['hospital']['name'] !!}</span>
+                                <br/>
+                                <span>{!! $doctor['info'] !!}</span>
+                                <br/>
+                                <span>Hà Nội</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+                    <div class="schedule">
+                        <div class="schedule-title">
+                            <span>Đặt lịch khám</span>
+                            <select name="date" class="date" data-schedule="doctor-{!! $doctor['id'] !!}">
+                                @foreach($doctor['times'] as $day => $time)
+                                    <option data-items='{!! $time['times_json'] !!}' class="schedule-date">{!! $day !!}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="schedule-detail">
+                            @if(count($doctor['times']) > 0)
+                                <ul id="doctor-{!! $doctor['id'] !!}">
+                                    @foreach(array_values($doctor['times'])[0]['times'] as $time)
+                                        <li><a href="{!! $time['link'] !!}">{!! $time['time'] !!}</a></li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <div><span>Không có lịch hôm nay</span></div>
+                            @endif
 
-    <div class="panel panel-default content">
-        <div class="panel-body body-content">
-            <div class="content-item">
-                <div class="item">
-                    <div class="item-image">
-                        <div class="image" style="background-image: url('images/doctors/bacsy.jpg');"></div>
-                    </div>
-                    <div class="item-detail">
-                        <div class="name">
-                            <a href="#">Bac Sy Hoang Huu Hoi</a>
+                            <div class="noty">
+                                <span><i class="fa fa-hand-o-up" aria-hidden="true"></i> Chọn và đặt lịch miễn phí</span>
+                            </div>
+                            <div class="price">Giá khám: <span>{!! number_format($doctor['examination_fee'], 0, ',', '.') !!}<sup>đ</sup></span></div>
+                            {{-- <div class="insurance">Loại bảo hiểm áp dụng. <a href="#">Xem chi tiet</a></div> --}}
                         </div>
-                        <div class="description">
-                            <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
-                            <br/>
-                            <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule">
-                    <div class="schedule-title">
-                        <span>Dat lich kham</span>
-                        <select name="date" class="date">
-                            <option>Thu 4 - 02/09</option>
-                            <option>Thu 5 - 03/09</option>
-                            <option>Thu 6 - 04/09</option>
-                            <option>Thu 7 - 05/09</option>
-                        </select>
-                    </div>
-                    <div class="schedule-detail">
-                        <ul>
-                            <li><a href="">09:30</a></li>
-                            <li><a href="">10:00</a></li>
-                            <li><a href="">10:30</a></li>
-                            <li><a href="">11:00</a></li>
-                            <li><a href="">11:30</a></li>
-                            <li><a href="">13:30</a></li>
-                            <li><a href="">14:00</a></li>
-                            <li><a href="">14:30</a></li>
-                            <li><a href="">15:00</a></li>
-                            <li><a href="">15:30</a></li>
-                            <li><a href="">16:30</a></li>
-                        </ul>
-                        <div class="noty">
-                            <span><i class="fa fa-hand-o-up" aria-hidden="true"></i> Chon va dat lich mien phi</span>
-                        </div>
-                        <div class="price">Gia kham: <span>200.000<sup>d</sup></span></div>
-                        <div class="insurance">Loai bao hiem ap dung. <a href="#">Xem chi tiet</a></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="panel panel-default content">
-        <div class="panel-body body-content">
-            <div class="content-item">
-                <div class="item">
-                    <div class="item-image">
-                        <div class="image" style="background-image: url('images/doctors/bacsy.jpg');"></div>
-                    </div>
-                    <div class="item-detail">
-                        <div class="name">
-                            <a href="#">Bac Sy Hoang Huu Hoi</a>
-                        </div>
-                        <div class="description">
-                            <span>Bác sỹ khám chuyên khoa Cơ Xương Khớp Nguyên trưởng khoa Cơ - Xương - Khớp Bệnh Viện Bạch Mai</span>
-                            <br/>
-                            <span><i class="fa fa-map-marker" aria-hidden="true"></i> Ha Noi</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule">
-                    <div class="schedule-title">
-                        <span>Dat lich kham</span>
-                        <select name="date" class="date">
-                            <option>Thu 4 - 02/09</option>
-                            <option>Thu 5 - 03/09</option>
-                            <option>Thu 6 - 04/09</option>
-                            <option>Thu 7 - 05/09</option>
-                        </select>
-                    </div>
-                    <div class="schedule-detail">
-                        <ul>
-                            <li><a href="">09:30</a></li>
-                            <li><a href="">10:00</a></li>
-                            <li><a href="">10:30</a></li>
-                            <li><a href="">11:00</a></li>
-                            <li><a href="">11:30</a></li>
-                            <li><a href="">13:30</a></li>
-                            <li><a href="">14:00</a></li>
-                            <li><a href="">14:30</a></li>
-                            <li><a href="">15:00</a></li>
-                            <li><a href="">15:30</a></li>
-                            <li><a href="">16:30</a></li>
-                        </ul>
-                        <div class="noty">
-                            <span><i class="fa fa-hand-o-up" aria-hidden="true"></i> Chon va dat lich mien phi</span>
-                        </div>
-                        <div class="price">Gia kham: <span>200.000<sup>d</sup></span></div>
-                        <div class="insurance">Loai bao hiem ap dung. <a href="#">Xem chi tiet</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 
 @endsection

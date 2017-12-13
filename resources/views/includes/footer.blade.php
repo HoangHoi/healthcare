@@ -15,16 +15,16 @@
     <div class="col-md-4 col-sm-12 col-xs-12">
         <ul class="footer-menu">
             <li>
-                <a>Trang chủ</a>
+                <a href="{!! route('home') !!}">Trang chủ</a>
             </li>
             <li>
-                <a>Đặt lịch khám</a>
+                <a href="{!! route('booking.index') !!}">Đặt lịch khám</a>
             </li>
             <li>
-                <a>Cẩm nang</a>
+                <a href="{!! route('post.index') !!}">Cẩm nang</a>
             </li>
             <li>
-                <a>Liên hệ</a>
+                <a href="{!! route('contact') !!}">Liên hệ</a>
             </li>
         </ul>
     </div>

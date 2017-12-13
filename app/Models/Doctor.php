@@ -43,4 +43,9 @@ class Doctor extends Model
     {
         return $this->morphMany(Time::class, 'entityable');
     }
+
+    public function requests()
+    {
+        return $this->morphMany(Request::class, 'entityable');
+    }
 }

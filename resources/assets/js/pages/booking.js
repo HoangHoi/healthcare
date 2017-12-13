@@ -1,10 +1,22 @@
 let data = [];
+let itemData = null;
 
 function resetData() {
     $('#service-detail').html('');
     $('.result-list').html('');
     $('#error').css('display', 'none');
     $('.service-id').val('');
+    $('.date').val('');
+    $('.time').val('');
+    $('#time').val('');
+    $('#date').val('');
+    $('#time-select').css('display', 'none');
+}
+
+function hiddenTimeSelect() {
+    $('#time-select').css('display', 'none');
+    $('.time').val('');
+    $('#time').val('');
 }
 
 $('#select-service').on('change', (event) => {
@@ -35,7 +47,7 @@ let descriptionElement = '<div class="description">'
 
 $('.result-list').on('click', 'li', function (event) {
     let element = $(event.currentTarget);
-    let itemData = data[element.data('index')];
+    itemData = data[element.data('index')];
     let type = element.data('type');
     let serviceDetailHtml = '';
     let image = '';
@@ -63,6 +75,11 @@ $('.result-list').on('click', 'li', function (event) {
             info = info.replace(':name:', itemData.name);
             info = info.replace(':info:', infoString);
             serviceDetailHtml += info;
+            // if (itemData['times'].length) {
+            //     $('#time-select').css('display', 'flex');
+            // } else {
+            // }
+            hiddenTimeSelect();
         break;
         case 'benh-vien':
             image = pictureElement;
@@ -161,7 +178,7 @@ $('#tim-bac-sy').on('keypress focus', function(event) {
     clearTimeout(timer);
     timer = setTimeout(() => {
         search(event.target.value, 'bac-sy');
-    }, 2000);
+    }, 1000);
 });
 
 $('#tim-chuyen-khoa').on('keypress focus', function(event) {
@@ -170,7 +187,7 @@ $('#tim-chuyen-khoa').on('keypress focus', function(event) {
     clearTimeout(timer);
     timer = setTimeout(() => {
         search(event.target.value, 'chuyen-khoa');
-    }, 2000);
+    }, 1000);
 });
 
 $('#tim-benh-vien').on('keypress focus', function(event) {
@@ -179,13 +196,12 @@ $('#tim-benh-vien').on('keypress focus', function(event) {
     clearTimeout(timer);
     timer = setTimeout(() => {
         search(event.target.value, 'benh-vien');
-    }, 2000);
+    }, 1000);
 });
 
 let errorText = 'Lỗi! Bạn chưa chọn :type:. Nếu bạn chưa quyết định chọn :type: nào thì hãy chọn mục "Tư vấn tôi chọn bác sỹ". Chúng tôi sẽ gọi điện tư vấn cho bạn';
 
 $('.booking-form').on('submit', function (event) {
-    console.log(event);
     let typeMap = {
         'bac-sy': 'bac sy',
         'chuyen-khoa': 'chuyen khoa',
@@ -202,6 +218,10 @@ $('.booking-form').on('submit', function (event) {
     }
 });
 
-$('#date-select').on('change', function (event) {
+$('#date').on('change', function (event) {
     $('.date').val(event.target.value);
+    hiddenTimeSelect();
+});
+$('#time').on('change', function (event) {
+    $('.time').val(event.target.value);
 });

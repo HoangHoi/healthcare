@@ -13,6 +13,11 @@ class Patient extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'name', 'year_of_birth', 'description',
+        'name', 'gender', 'year_of_birth', 'description',
     ];
+
+    public function request()
+    {
+        return $this->hasOne(Request::class);
+    }
 }

@@ -12,10 +12,12 @@
                     <span>Chọn dịch vụ</span>
                 </div>
                 <select id="select-service" class="select-box">
-                    <option value="bac-sy">
-                        <span>Hẹn bác sỹ</span>
-                    </option>
-                    <option value="chuyen-khoa">
+                    @foreach($services as $serviceValue => $serviceName)
+                        <option value="{!! $serviceValue !!}" {!! isset($type) && $type == $serviceValue ? 'selected' : '' !!}>
+                            <span>{!! $serviceName !!}</span>
+                        </option>
+                    @endforeach
+                    {{-- <option value="chuyen-khoa">
                         <span>Chọn chuyên khoa khám</span>
                     </option>
                     <option value="benh-vien">
@@ -23,7 +25,7 @@
                     </option>
                     <option value="tu-van">
                         <span>Tư vấn tôi chọn bác sỹ</span>
-                    </option>
+                    </option> --}}
                 </select>
             </div>
             <div class="search-group active" id="chon-bac-sy">
@@ -67,17 +69,23 @@
             </div>
 
             <div class="service-detail" id="service-detail">
-
+                {!! $serviceDetail or '' !!}
             </div>
 
-            <div class="time-select">
+            <div class="date-time-select">
                 <div class="date-select">
                     <label for="date">Ngày khám</label>
-                    <input type="text" class="form-control datepicker" id="date-select" placeholder="29-10-2017">
+                    <input type="text" class="form-control datepicker" name="date" id="date" placeholder="29-10-2017" value="{!! $date or '' !!}">
                 </div>
-                <div class="time-select">
-                    <label for="date">Giờ khám</label>
-                    <input type="text" class="form-control" id="date" placeholder="09:30">
+                <div class="time-select" id="time-select" {!! isset($time) ? 'style="display: flex;"' : 'style="display: none;"' !!}>
+                    <label for="time">Giờ khám</label>
+                    <select class="form-control" id="time" name="time">
+                        @if(isset($time))
+                            @foreach($time['list'] as $key => $value)
+                                <option value="{!! $value !!}" {!! $time['selected'] == $key ? 'selected' : '' !!}>{!! $value !!}</option>
+                            @endforeach
+                        @endif
+                    </select>
                 </div>
             </div>
 
@@ -91,9 +99,10 @@
                         <form action="{!! route('booking.store') !!}" method="POST" class="booking-form">
                             {{ csrf_field() }}
                             <input type="hidden" name="type" value="dat-cho-minh"/>
-                            <input type="hidden" name="service_type" class="service-type" value="bac-sy"/>
-                            <input type="hidden" name="service_id" class="service-id" value=""/>
-                            <input type="hidden" name="date" class="date" value=""/>
+                            <input type="hidden" name="service_type" class="service-type" value="{!! $type or 'bac-sy' !!}"/>
+                            <input type="hidden" name="service_id" class="service-id" value="{!! $serviceId or '' !!}"/>
+                            <input type="hidden" name="date" class="date" value="{!! $date or '' !!}"/>
+                            <input type="hidden" name="time" class="time" value="{!! isset($time) ? $time['list'][$time['selected']] : '' !!}"/>
                             <div class="h-input-group">
                                 <input type="text" name="name" class="h-form-control" placeholder="Họ và tên bệnh nhân (bắt buộc)" aria-describedby="name" required="required">
                                 <span class="h-input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
@@ -136,9 +145,10 @@
                         <form action="{!! route('booking.store') !!}" method="POST" class="booking-form">
                             {{ csrf_field() }}
                             <input type="hidden" name="type" value="dat-cho-nguoi-than"/>
-                            <input type="hidden" name="service_type" class="service-type" value="bac-sy"/>
-                            <input type="hidden" name="service_id" class="service-id" value=""/>
-                            <input type="hidden" name="date" class="date" value=""/>
+                            <input type="hidden" name="service_type" class="service-type" value="{!! $type or 'bac-sy' !!}"/>
+                            <input type="hidden" name="service_id" class="service-id" value="{!! $serviceId or '' !!}"/>
+                            <input type="hidden" name="date" class="date" value="{!! $date or '' !!}"/>
+                            <input type="hidden" name="time" class="time" value="{!! isset($time) ? $time['list'][$time['selected']] : '' !!}"/>
                             <div style="color: #4168ae; font-weight: 900; margin: 5px 0;">
                                 <span>Thông tin người đặt lịch</span>
                             </div>

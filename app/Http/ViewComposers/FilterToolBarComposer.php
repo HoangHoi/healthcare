@@ -21,6 +21,7 @@ class FilterToolBarComposer
     {
         $this->routeName = Route::currentRouteName();
         $this->parameters = Route::current()->parameters();
+        $this->request = Route::getCurrentRequest();
     }
 
     /**
@@ -31,45 +32,18 @@ class FilterToolBarComposer
      */
     public function compose(View $view)
     {
-        // switch ($this->routeName) {
-        //     case RouteName::HOSPITAL_INDEX_PAGE:
-        //         $hospitals = Hospital::get()->toArray();
-        //         $view->with('hospitals', $hospitals);
-        //         break;
-
-        //     case RouteName::HOSPITAL_SHOW_PAGE:
-        //         $hospitals = Hospital::get()->toArray();
-        //         $view->with('hospitals', $this->addActiveParam($hospitals, $this->parameters['hospital']->id));
-        //         break;
-
-        //     case RouteName::SPECIALIST_INDEX_PAGE:
-        //         $specialists = Specialist::get()->toArray();
-        //         $view->with('specialists', $specialists);
-        //         break;
-
-        //     case RouteName::SPECIALIST_SHOW_PAGE:
-        //         $specialists = Specialist::get()->toArray();
-        //         $view->with('specialists', $this->addActiveParam($specialists, $this->parameters['specialist']->id));
-        //         break;
-
-        //     case RouteName::HOME_PAGE:
-        //     default:
         $hospitals = Hospital::get()->toArray();
         $specialists = Specialist::get()->toArray();
         $view->with('hospitals', $hospitals)
             ->with('specialists', $specialists);
-        // }
+        if ($this->request->get('hospital')) {
+            $view->with('hospitalChecked', $this->request->get('hospital'));
+        }
+        if ($this->request->get('specialist')) {
+            $view->with('specialistChecked', $this->request->get('specialist'));
+        }
+        if ($this->request->get('doctor')) {
+            $view->with('doctorName', $this->request->get('doctor'));
+        }
     }
-
-    // protected function addActiveParam(array $lists, $idActived)
-    // {
-    //     foreach ($lists as $key => $item) {
-    //         if ($item['id'] == $idActived) {
-    //             $lists[$key]['menuActived'] = true;
-    //         } else {
-    //             $lists[$key]['menuActived'] = false;
-    //         }
-    //     }
-    //     return $lists;
-    // }
 }

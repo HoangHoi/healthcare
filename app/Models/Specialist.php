@@ -23,4 +23,9 @@ class Specialist extends Model
     {
         return $this->hasMany('Doctor');
     }
+
+    public function requests()
+    {
+        return $this->morphMany(Request::class, 'entityable');
+    }
 }
