@@ -18,7 +18,7 @@ class DoctorController extends Controller
                     $query->orderBy('begin_time', 'asc');
                 },
                 'hospital' =>  function($query) {
-                    $query->select(['id', 'name']);
+                    $query->select(['id', 'name', 'address']);
                 },
                 'specialist' =>  function($query) {
                     $query->select(['id', 'name']);
